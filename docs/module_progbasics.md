@@ -8,25 +8,25 @@
 
 Lists are one of the most versatile data structures. They are mutable as opposed to strings, can be indexed, sliced, sorted and iterated. In most programming languages, arrays contain data of the same type only. In Python lists can contain multiple types of data combined. Arrays have a special module in Python that has to be imported (from array import *).
 
-st.sort() and sorted() - which will sort the elements in the list in place or in a copy respectively  
-lst.append() - which adds an element at the end of the list  
-lst.insert(0, 'a') - which inserts 'a' at index 0  
-lst.remove(value) - which removes the first instance of that value  
-lst.reverse() - which reverses the list in place and returns None  
+st.sort() and sorted() - will sort the elements in the list in place or in a copy respectively  
+lst.append() - adds an element at the end of the list  
+lst.insert(0, 'a') - inserts 'a' at index 0  
+lst.remove(value) - removes the first instance of that value  
+lst.reverse() - reverses the list in place and returns None  
 
 
 #### What is the difference between a list/array and a set?
 
-#### A list can mainly contain multiple items with the same value while sets can contain only unique values, duplicates are removed.
-#### Lists have certain operations that can be performed on them, but not on sets, such as sort, find, count, reverse. Sets also 
-#### have specific operations that can be performed only on them, such as: intersection, union, difference, symmetric difference.
+A list can mainly contain multiple items with the same value while sets can contain only unique values, duplicates are removed.
+Lists have certain operations that can be performed on them, but not on sets, such as sort, find, count, reverse. Sets also 
+have specific operations that can be performed only on them, such as: intersection, union, difference, symmetric difference.
 
 
 #### What is the purpose and methods of a dictionary/map data structure?
 
-#### The dictionary's main characteristic is that it has a unique set of keys, which can have values assigned to them. It allows 
-#### you to store and retrieve elements by referencing a key. As dictionaries are referenced by key, they have very fast lookups. 
-#### As they are primarily used for referencing items by key, they are not sorted.
+The dictionary's main characteristic is that it has a unique set of keys, which can have values assigned to them. It allows 
+you to store and retrieve elements by referencing a key. As dictionaries are referenced by key, they have very fast lookups. 
+As they are primarily used for referencing items by key, they are not sorted.
 
 
 ### Algorithms
