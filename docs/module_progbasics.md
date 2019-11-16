@@ -36,6 +36,7 @@
 
 #### Fibonacci sequences. Write a method (or pseudo code), that generates the Fibonacci sequences.
 
+
 def fibonacci_sequence():
     user_number = int(input('How many Fibonacci numbers do you want to know? '))
     fibonacci_numbers = []
