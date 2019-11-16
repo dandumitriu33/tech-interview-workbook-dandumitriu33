@@ -36,26 +36,26 @@
 
 #### Fibonacci sequences. Write a method (or pseudo code), that generates the Fibonacci sequences.
 
-#### def fibonacci_sequence():
-####     user_number = int(input('How many Fibonacci numbers do you want to know? '))
-####     fibonacci_numbers = []
-####     first_number = 0
-####     second_number = 1
-####     fibonacci_numbers.append(first_number)
-####     fibonacci_numbers.append(second_number)
-#### 
-####     # as 0 and 1 are already 2 numbers in the list, the next section will
-####     # add the remaining numbers (up to user_number) of the sequence in the list
-#### 
-####     i = 0
-####     while i < user_number -2:
-####         new_number = fibonacci_numbers[-1] + fibonacci_numbers[-2]
-####         fibonacci_numbers.append(new_number)
-####         i += 1
-####     return fibonacci_numbers
-#### 
-#### 
-#### print(fibonacci_sequence())
+def fibonacci_sequence():
+    user_number = int(input('How many Fibonacci numbers do you want to know? '))
+    fibonacci_numbers = []
+    first_number = 0
+    second_number = 1
+    fibonacci_numbers.append(first_number)
+    fibonacci_numbers.append(second_number)
+
+    # as 0 and 1 are already 2 numbers in the list, the next section will
+    # add the remaining numbers (up to user_number) of the sequence in the list
+
+    i = 0
+    while i < user_number -2:
+        new_number = fibonacci_numbers[-1] + fibonacci_numbers[-2]
+        fibonacci_numbers.append(new_number)
+        i += 1
+    return fibonacci_numbers
+
+
+ print(fibonacci_sequence())
 
 
 #### How do you find a max value in a list/array if you can’t use any built-in functions?
