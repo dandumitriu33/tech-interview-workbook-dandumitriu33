@@ -8,11 +8,11 @@
 
 Lists are one of the most versatile data structures. They are mutable as opposed to strings, can be indexed, sliced, sorted and iterated. In most programming languages, arrays contain data of the same type only. In Python lists can contain multiple types of data combined. Arrays have a special module in Python that has to be imported (from array import *).
 
-st.sort() and sorted() - which will sort the elements in the list in place or in a copy respectively
-lst.append() - which adds an element at the end of the list
-lst.insert(0, 'a') - which inserts 'a' at index 0
-lst.remove(value) - which removes the first instance of that value
-lst.reverse() - which reverses the list in place and returns Nonelooking like it's been marked up with tags or formatting instructions.
+st.sort() and sorted() - which will sort the elements in the list in place or in a copy respectively  
+lst.append() - which adds an element at the end of the list  
+lst.insert(0, 'a') - which inserts 'a' at index 0  
+lst.remove(value) - which removes the first instance of that value  
+lst.reverse() - which reverses the list in place and returns None  
 
 
 #### What is the difference between a list/array and a set?
