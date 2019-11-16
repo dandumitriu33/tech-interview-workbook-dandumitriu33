@@ -35,10 +35,112 @@
 ### Algorithms
 
 #### Fibonacci sequences. Write a method (or pseudo code), that generates the Fibonacci sequences.
+
+#### def fibonacci_sequence():
+####     user_number = int(input('How many Fibonacci numbers do you want to know? '))
+####     fibonacci_numbers = []
+####     first_number = 0
+####     second_number = 1
+####     fibonacci_numbers.append(first_number)
+####     fibonacci_numbers.append(second_number)
+#### 
+####     # as 0 and 1 are already 2 numbers in the list, the next section will
+####     # add the remaining numbers (up to user_number) of the sequence in the list
+#### 
+####     i = 0
+####     while i < user_number -2:
+####         new_number = fibonacci_numbers[-1] + fibonacci_numbers[-2]
+####         fibonacci_numbers.append(new_number)
+####         i += 1
+####     return fibonacci_numbers
+#### 
+#### 
+#### print(fibonacci_sequence())
+
+
 #### How do you find a max value in a list/array if you can’t use any built-in functions?
+
+#### numbers = [5, 20, 14, 2, 31]
+#### 
+#### 
+#### def find_max(arr):
+####     max_of_list = arr[0]
+####     for i in arr:
+####         if i > max_of_list:
+####             max_of_list = i
+####     return max_of_list
+#### 
+#### 
+#### print(find_max(numbers))
+
+
 #### How do you find the average of values in a list/array if you can’t use any built-in functions?
+
+#### numbers = [5, 20, 14, 2, 31]
+#### 
+#### 
+#### def find_average(arr):
+####     sum = 0
+####     for i in arr:
+####         sum += i
+####     return sum/len(arr)
+#### 
+#### 
+#### print(find_average(numbers))
+
+
 #### What do we call an *in-place* sort?
+
+#### numbers = [5, 20, 14, 2, 31]
+#### 
+#### numbers.sort()
+#### print(numbers)
+#### 
+#### # [2, 5, 14, 20, 31]
+
+
 #### Explain an algorithm which sorts a list!
+
+#### Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent
+#### elements if they are in the wrong order. In the improved version, the algorithm only stops after
+#### it runs a pass where it doesn't perform a swap.
+
+#### numbers = [5, 20, 14, 2, 31]
+#### 
+#### 
+#### def bubble_sort(arr):
+####     n = len(arr)
+####     for i in range(n):
+####         for j in range(0, n-i-1):
+####             if arr[j] > arr[j+1]:
+####                 arr[j], arr[j+1] = arr[j+1], arr[j]
+####     return arr
+#### 
+#### 
+#### print(bubble_sort(numbers))
+#### # [2, 5, 14, 20,31]
+
+
+#### numbers = [5, 20, 14, 2, 31]
+#### 
+#### 
+#### def bubble_sort(arr):
+####     n = len(arr)
+####     for i in range(n):
+####         swapped = False
+####         for j in range(0, n-i-1):
+####             if arr[j] > arr[j+1]:
+####                 arr[j], arr[j+1] = arr[j+1], arr[j] 
+####                 swapped = True
+####         if swapped is False:
+####             break
+####     return arr
+#### 
+#### 
+#### print(bubble_sort(numbers))
+#### 
+#### # [2, 5, 14, 20, 31]
+
 
 ### Programming paradigms - procedural
 
