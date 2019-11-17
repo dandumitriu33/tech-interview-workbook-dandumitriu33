@@ -8,7 +8,7 @@
 
 Lists are one of the most versatile data structures. They are mutable as opposed to strings, can be indexed, sliced, sorted and iterated. In most programming languages, arrays contain data of the same type only. In Python lists can contain multiple types of data combined. Arrays have a special module in Python that has to be imported (from array import *).
 
-- st.sort() and sorted() - will sort the elements in the list in place or in a copy respectively  
+- lst.sort() and sorted() - will sort the elements in the list in place or in a copy respectively  
 - lst.append() - adds an element at the end of the list  
 - lst.insert(0, 'a') - inserts 'a' at index 0  
 - lst.remove(value) - removes the first instance of that value  
@@ -37,17 +37,24 @@ As they are primarily used for referencing items by key, they are not sorted.
             second_number = 1
             fibonacci_numbers.append(first_number)
             fibonacci_numbers.append(second_number)
+
             # as 0 and 1 are already 2 numbers in the list, the next section will
             # add the remaining numbers (up to user_number) of the sequence in the list
+
             i = 0
-            while i < user_number -2:
+            while i < user_number - 2:
                 new_number = fibonacci_numbers[-1] + fibonacci_numbers[-2]
                 fibonacci_numbers.append(new_number)
                 i += 1
             return fibonacci_numbers
+
+
         print(fibonacci_sequence())
 
 #### How do you find a max value in a list/array if you can’t use any built-in functions?
+
+One way is to assign the maximum to the first element and then loop through the list once, comparing the
+maximum to each element. If the element in the list is greater, then the maximum will take the element's value.
 
         numbers = [5, 20, 14, 2, 31]
 
@@ -62,22 +69,35 @@ As they are primarily used for referencing items by key, they are not sorted.
 
         print(find_max(numbers))
 
+        # 31
+
 
 #### How do you find the average of values in a list/array if you can’t use any built-in functions?
+
+A simple way to do it would be to add the values of all the elements in the list and then divide it 
+by the total number of elements. 
 
         numbers = [5, 20, 14, 2, 31]
 
 
         def find_average(arr):
+            counter = 0
             sum = 0
             for i in arr:
                 sum += i
-            return sum/len(arr)
+                counter += 1
+            return sum/counter
 
 
         print(find_average(numbers))
 
+        # 14.4
+
+
 #### What do we call an *in-place* sort?
+
+The in place sort is the operation that modifies the data without creating a separate sorted copy along
+side the original. It sorts it in place, it manipulates the original.
 
         numbers = [5, 20, 14, 2, 31]
 
@@ -106,6 +126,7 @@ it runs a pass where it doesn't perform a swap.
 
 
         print(bubble_sort(numbers))
+
         # [2, 5, 14, 20,31]
 
 
@@ -132,9 +153,49 @@ it runs a pass where it doesn't perform a swap.
 
 ### Programming paradigms - procedural
 
+
 #### What is the call stack?
+
+In computer science, a call stack is a stack data structure that stores information about the active subroutines 
+of a computer program. This kind of stack is also known as an execution stack, program stack, control stack, 
+run-time stack, or machine stack, and is often shortened to just "the stack".  
+
+The primary purpose of a call stack is to store *the return addresses*. When a subroutine is called, the location 
+(address) of the instruction at which the calling routine can later resume needs to be saved somewhere. One benefit
+is that each task can have its own stack, and thus the subroutine can be thread-safe, that is, can be active 
+simultaneously for different tasks doing different things. Another benefit is that by providing reentrancy, 
+recursion is automatically supported.
+
+
 #### What is “Stack overflow”?
+
+In software, a stack overflow occurs if the call stack pointer exceeds the stack bound. The call stack may consist 
+of a limited amount of address space, often determined at the start of the program. The size of the call stack depends 
+on many factors, including the programming language, machine architecture, multi-threading, and amount of available memory. 
+When a program attempts to use more space than is available on the call stack (that is, when it attempts to access memory 
+beyond the call stack's bounds, which is essentially a buffer overflow), the stack is said to overflow, typically resulting 
+in a program crash.
+
+Stack Overflow (https://stackoverflow.com/)is a question and answer site for professional and enthusiast programmers. It 
+features questions and answers on a wide range of topics in computer programming.
+
+
 #### What are the main parts of a function?
+
+1. Keyword **def** marks the start of function header.
+2. A function name to uniquely identify it. Function naming follows the same rules of writing identifiers in Python.
+3. Parameters (arguments) through which we pass values to a function. They are optional.
+4. A colon (:) to mark the end of function header.
+5. Optional documentation string (docstring) to describe what the function does.
+6. One or more valid python statements that make up the function body. Statements must have same indentation level (usually 4 spaces).
+7. An optional return statement to return a value from the function.
+
+        def function_named_greet(name_parameter):
+            """This function greets
+            the person passed in as
+            parameter"""
+            print("Hello, " + name + ". Good morning!")
+            return 'Greet completed.'
 
 ### Programming languages - Python  
 #### How do you use a dictionary in Python?
