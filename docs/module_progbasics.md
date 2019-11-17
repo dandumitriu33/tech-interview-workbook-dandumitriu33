@@ -225,8 +225,54 @@ Immutable variable values can't be changed once they are created. Immutable data
         # example_string[0] = 'w'
         # TypeError: 'str' object does not support item assignment
 
-#### What is conditional expression in Python?
+#### What is a conditional expression in Python?
+
+Conditional expressions, involving keywords such as if, elif, and else, provide Python programs with the ability to perform 
+different actions depending on a boolean condition: True or False.
+
+        variable_a = 5
+        variable_b = 3
+        if variable_a > variable_b:
+            print('a > b')
+
+        # a > b
+
 #### What are different types of arguments in Python?
+
+An argument is simply a value provided to a function when you call it:
+
+        x = foo( 3 )         # 3 is the argument for foo
+        y = bar( 4, "str" )  # 4 and "str" are the two arguments for bar
+
+Arguments are usually contrasted with parameters, which are names used to specify what arguments a function will need when it 
+is called. When a function is called, each parameter is assigned one of the argument values.
+
+        # foo has two named parameters, x and y
+        def foo ( x, y ):
+            return x + y
+
+        z = foo( 3, 6 )
+
+foo is given two arguments, 3 and 6. The first argument is assigned to the first parameter, x. The second argument is assigned 
+to the second parameter, y.
+
+Python functions have two kinds of parameters: args (arguments) and kwargs (keyword arguments) args are required parameters, 
+while kwargs have default values set.
+
+The following function takes arg 'foo' and kwarg 'bar'
+
+        def hello_world(foo, bar='bye'):
+            print(foo)
+            print(bar)
+This is how you can call the function
+
+        >>> hello_world('hello')
+        hello
+        bye
+        >>> hello_world('hello', bar='cya')
+        hello
+        cya
+
 #### What is variable shadowing? (context: variable scope)
 #### What can happen if you try to delete/drop/add an item from a List, while you are iterating over it in Python?
 #### What is the "golden rule" of variable scoping in Python (context: LEGB)? What is the lifetime of variables?
