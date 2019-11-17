@@ -217,7 +217,7 @@ primarily used for referencing items by key, they are not sorted.
 
 #### What does it mean that an object is immutable in Python?
 
-Immutable variable value can not be changed once they are created.
+Immutable variable values can't be changed once they are created. Immutable datatypes: int, float, str, tuple and frozensets.
 
         example_string = 'abc'
         example_string[0] = 'w'
