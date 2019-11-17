@@ -53,8 +53,9 @@ As they are primarily used for referencing items by key, they are not sorted.
 
 #### How do you find a max value in a list/array if you can’t use any built-in functions?
 
-One way is to assign the maximum to the first element and then loop through the list once, comparing the
-maximum to each element. If the element in the list is greater, then the maximum will take the element's value.
+One way is to assign the maximum to the first element and then pass through the list once, comparing the
+maximum to each element. If the element in the list is greater, then the maximum will take the element's value
+and continue.
 
         numbers = [5, 20, 14, 2, 31]
 
@@ -96,7 +97,7 @@ by the total number of elements.
 
 #### What do we call an *in-place* sort?
 
-The in place sort is the operation that modifies the data without creating a separate sorted copy along
+The in-place sort is the operation that modifies the data without creating a separate sorted copy along
 side the original. It sorts it in place, it manipulates the original.
 
         numbers = [5, 20, 14, 2, 31]
@@ -110,8 +111,9 @@ side the original. It sorts it in place, it manipulates the original.
 #### Explain an algorithm which sorts a list!
 
 Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent 
-elements if they are in the wrong order. In the improved version, the algorithm only stops after 
-it runs a pass where it doesn't perform a swap.
+elements if they are in the wrong order. It loops thorugh the list n times where n is the number
+of elements. In the improved version, the algorithm stops after it runs a pass where it doesn't 
+perform a swap.
 
         numbers = [5, 20, 14, 2, 31]
 
