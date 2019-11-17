@@ -178,7 +178,7 @@ When a program attempts to use more space than is available on the call stack (t
 beyond the call stack's bounds, which is essentially a buffer overflow), the stack is said to overflow, typically resulting 
 in a program crash.
 
-Stack Overflow (https://stackoverflow.com/)is a question and answer site for professional and enthusiast programmers. It 
+Stack Overflow https://stackoverflow.com/ is a question and answer site for professional and enthusiast programmers. It 
 features questions and answers on a wide range of topics in computer programming.
 
 
@@ -201,7 +201,30 @@ features questions and answers on a wide range of topics in computer programming
 
 ### Programming languages - Python  
 #### How do you use a dictionary in Python?
+
+A dictionary is an example of a **key value store** also known as **Mapping** in Python. It allows you to store and retrieve
+elements by referencing a key. As dictionaries are referenced by key, they have very fast lookups. As they are
+primarily used for referencing items by key, they are not sorted.
+
+        example_dictionary = {1: 'abc', 2: 'def', 3: 'xyz'}
+        print(example_dictionary[3])
+
+        example_dictionary[4] = 'www'
+        print(example_dictionary)
+
+        # xyz
+        # {1: 'abc', 2: 'def', 3: 'xyz', 4: 'www'}
+
 #### What does it mean that an object is immutable in Python?
+
+Immutable variable value can not be changed once they are created.
+
+        example_string = 'abc'
+        example_string[0] = 'w'
+
+        # example_string[0] = 'w'
+        # TypeError: 'str' object does not support item assignment
+
 #### What is conditional expression in Python?
 #### What are different types of arguments in Python?
 #### What is variable shadowing? (context: variable scope)
@@ -209,12 +232,12 @@ features questions and answers on a wide range of topics in computer programming
 #### What is the "golden rule" of variable scoping in Python (context: LEGB)? What is the lifetime of variables?
 #### If you need to access the iterator variable after a for loop, how would you do it in Python?
 #### What type of elements can a list contain in Python?
-#### What is slice operator in Python and how to use?
+#### What is the slice operator in Python and how do you use it?
 #### What arithmetic operators (+,*,-,/) can be used on lists in Python? What do they do?
 #### What is the purpose of the in and not in membership operators in Python?
 #### What does the + operator mean when used with strings in Python?
-#### Explain f strings in Python?
-#### Name 4 iterable types in Python!
+#### Explain f strings in Python.
+#### Name 4 iterable types in Python.
 #### What is the difference between list/set/dictionary comprehension and a generator expression in Python?
 #### Does the order of the function definitions matter in Python? Why?
 #### What does unpacking mean in Python?
