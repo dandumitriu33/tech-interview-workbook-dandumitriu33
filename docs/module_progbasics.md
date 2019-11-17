@@ -274,8 +274,105 @@ This is how you can call the function
         cya
 
 #### What is variable shadowing? (context: variable scope)
+
+In computer programming, *variable shadowing* occurs when a variable declared within a certain scope (decision block, method, 
+or inner class) has the same name as a variable declared in an outer scope. At the level of identifiers (names, rather than 
+variables), this is known as *name masking*. This outer variable is said to be *shadowed* by the inner variable, while the inner 
+identifier is said to *mask* the outer identifier. This can lead to confusion, as it may be unclear which variable subsequent 
+uses of the shadowed variable name refer to, which depends on the name resolution rules of the language.
+
+The following Python code provides another example of variable shadowing:
+
+        x = 0
+        def outer():
+            x = 1
+            def inner():
+                x = 2
+                print("inner:", x)
+            inner()
+            print("outer:", x)
+        outer()
+        print("global:", x)
+
+        # prints
+        # inner: 2
+        # outer: 1
+        # global: 0
+
+The keyword global (or nonlocal depending on the case) shall be used to avoid variable shadowing and assign to global variables:
+
+        x = 0
+        def outer():
+            x = 1
+            def inner():
+                global x
+                x = 2
+                print("inner:", x)
+            inner()
+            print("outer:", x)
+        outer()
+        print("global:", x)
+
+        # prints
+        # inner: 2
+        # outer: 1
+        # global: 2
+
 #### What can happen if you try to delete/drop/add an item from a List, while you are iterating over it in Python?
+
+In a for loop, .pop() will shorten the list but will still go through.
+
+        example_list = [1, 3, 4, 2, 5, 7, 4, 7]
+
+        for i in example_list:
+            print('word')
+            example_list.pop()
+
+        print(example_list)
+
+        # word
+        # word
+        # word
+        # word
+        # [1, 3, 4, 2]
+
+If we are working with a specific element at a certain index, and the list is shrunk for example under that index,
+an IndexError will come up
+
+        example_list = [1, 3, 4, 2, 5, 7, 4, 7]
+
+        for i in example_list:
+            print(example_list[5])
+            example_list.pop()
+
+        # 7
+        # 7
+        # 7
+        # print(example_list[5])
+        # IndexError: list index out of range
+
 #### What is the "golden rule" of variable scoping in Python (context: LEGB)? What is the lifetime of variables?
+
+[Built-in   [Global   [Enclosed   [Local   ]]]] LEGB hierarchy from broadest to narrowest.
+
+**Namespaces**: A namespace is a container where names are mapped to objects, they are used to avoid confusions in 
+cases where same names exist in different namespaces. They are created by modules, functions, classes etc.
+
+**Scope**: A scope defines the hierarchical order in which the namespaces have to be searched in order to obtain 
+the mappings of name-to-object(variables). It is a context in which variables exist and from which they are referenced. 
+It defines the accessibility and the lifetime of a variable.
+
+**Local Scope**: Local scope refers to variables defined in current function. Always, a function will first look up for 
+a variable name in its local scope. Only if it does not find it there, the outer scopes are checked.
+
+**Enclosed Scope**: For the enclosed scope, we need to define an outer function enclosing the inner function otherwise 
+it will be a global variable.
+
+**The lifetime** of a variable is the period throughout which the variable exits in the memory of your Python program. 
+The lifetime of variables inside a function is as long as the function executes. These local variables are destroyed 
+as soon as the function returns or terminates.
+
+
 #### If you need to access the iterator variable after a for loop, how would you do it in Python?
 #### What type of elements can a list contain in Python?
 #### What is the slice operator in Python and how do you use it?
