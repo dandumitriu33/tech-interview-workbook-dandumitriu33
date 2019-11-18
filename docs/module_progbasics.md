@@ -824,6 +824,9 @@ We can use the finally clause for cleanup code that we always want to be execute
 
 #### What is the main goal of a retrospective meeting?
 
+The goal of the retrospective is for the team members to discuss among themselves about how the work went during the last sprint so 
+that better ways can be found to meet the project's goals. This means the team should talk about its internal processes as well.
+
 ## Programming environment
 
 ### Unix
