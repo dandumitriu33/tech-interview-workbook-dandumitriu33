@@ -877,8 +877,45 @@ as well) software on the system.
 
 - **yum** adds the functionality of automatic updates and package management with dependency management to RPM-based systems. As a high-level tool, like apt-get or aptitude, yum works with repositories.
 
+A **Linux repository** is a storage location from which your system retrieves and installs OS updates and applications. Each repository is a collection of software hosted on a remote server and intended to be used for installing and updating software packages on Linux systems. ... Repositories contain thousands of programs.
+
 #### How do you navigate in the filesystem with the command line?
+
+In the terminal window, several commands can be typed:
+
+- pwd: prints current working directory
+- cd directory_name changes the directory to the directory_name one
+- cd .. will change to the parent directory, ".." is the symbol
+- cd / will irectly change to the root directory
+- cd ~ or cd ~/ will go to the user's home directory
+- ls will list the direcotries and files in the current directory
+
 #### What does the following commands do: mkdir, rm, cat, cp, touch?
+
+- **mkdir**: Create the DIRECTORY(ies), if they do not already exist.
+- **rm**: removes each specified file.  By default, it does not remove directories.
+- **cat**: concatenate files and print on the standard output (screen)
+- **cp**: copy files and directories. Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
+- **touch**: copy files and directories. Update the access and modification times of each FILE to the current time.
+
 #### How can you look up what does a command do in Linux if you have no internet connection?
+
+- **man mkdir** - to use the manual information
+- **help cd** - to use the help page if it exists
+- **info cp**
+
 #### What does the following commands do: head, tail, more, less?
+
+- **head**: Print the first 10 lines of each FILE to standard output.  With more than one FILE, precede each with a 
+header giving the file name.
+- **tail**: Print the last 10 lines of each FILE to standard output.  With more than one FILE, precede each with a header giving the file name.
+- **more**: more  is  a  filter for paging through text one screenful at a time.  This version is especially primitive.  Users should realize that less(1) provides more(1) emulation plus extensive enhancements.
+- **less**: Less  is  a program similar to more (1), but it has many more features.  Less does not have to read the entire input file before starting, so with large input files it starts up faster than text editors like vi (1).
+
 #### How do you download a file from internet using the terminal?
+
+**wget**
+
+GNU Wget is a free utility for non-interactive download of files from the Web. It supports HTTP, HTTPS, and FTP protocols, as well as retrieval through HTTP proxies. Wget is non-interactive, meaning that it can work in the background, while the user is not logged on. This allows you to start a retrieval and disconnect from the system, letting Wget finish the work. By contrast, most of the Web browsers require constant user's presence, which can be a great hindrance when transferring a lot of data.  
+Wget can follow links in HTML, XHTML, and CSS pages, to create local versions of remote web sites, fully recreating the directory structure of the original site. This is sometimes referred to as "recursive downloading." While doing that, Wget respects the Robot Exclusion Standard (/robots.txt). Wget can be instructed to convert the links in downloaded files to point at the local files, for offline viewing.  
+Wget has been designed for robustness over slow or unstable network connections; if a download fails due to a network problem, it will keep retrying until the whole file has been retrieved. If the server supports regetting, it will instruct the server to continue the download from where it left off.
