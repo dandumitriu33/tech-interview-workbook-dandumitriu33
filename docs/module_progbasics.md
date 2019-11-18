@@ -580,10 +580,66 @@ to be done after the function has been defined or it will cause a Name Error.
             return a + b
 
 This section would cause an error because print_sum is calling sum_numbers inside of it and sum_numbers is defined after.
-The print_sum call is fine, the second call, the sum_numbers call will cause the error.
+The print_sum call is fine, the second call, the sum_numbers call, will cause the error.
 
 #### What does unpacking mean in Python?
+
+We use two operators * (for tuples) and ** (for dictionaries).
+Consider a situation where we have a function that receives four arguments. We want to make call to this function and we 
+have a list of size 4 with us that has all arguments for the function. If we simply pass list to the function, 
+the call doesn’t work.
+
+        def fun(a, b, c, d): 
+            print(a, b, c, d) 
+        
+        my_list = [1, 2, 3, 4] 
+        
+        # This doesn't work 
+        fun(my_list)
+        # TypeError: fun() takes exactly 4 arguments (1 given)
+
+**Unpacking** is the action where we use * to manipulate the list so that all elements of it can be passed as different parameters.
+
+        def fun(a, b, c, d): 
+            print(a, b, c, d) 
+
+        my_list = [1, 2, 3, 4] 
+        
+        # Unpacking list into four arguments 
+        fun(*my_list)
+        # (1, 2, 3, 4)
+
+        >>> range(3, 6)  # normal call with separate arguments 
+        [3, 4, 5] 
+        >>> args = [3, 6] 
+        >>> range(*args)  # call with arguments unpacked from a list 
+        [3, 4, 5] 
+
+**Packing** is the action we take when we don’t know how many arguments need to be passed to a python function. We can use Packing 
+to place all the arguments in a tuple.
+
+        def mySum(*args): 
+            sum = 0
+            for i in range(0, len(args)): 
+                sum = sum + args[i] 
+            return sum 
+        
+        # Driver code 
+        print(mySum(1, 2, 3, 4, 5)) 
+        print(mySum(10, 20)) 
+
+        # 15
+        # 30
+
+The above function mySum() does ‘packing’ to pack all the arguments that this method call receives into one single variable. Once we 
+have this ‘packed’ variable, we can do things with it that we would with a normal tuple. args[0] and args[1] would give you the first 
+and second argument, respectively. Since our tuples are immutable, you can convert the args tuple to a list so you can also modify, 
+delete and re-arrange items in i.
+
 #### What happens when you try to assign the result of a function which has no return statement to a variable in Python?
+
+If the return statement is without an expression, the special value None is returned. If there is no return statement in the function code, 
+the function ends, when the control flow reaches the end of the function body and the value "None" will be returned.
 
 ## Software engineering
 
