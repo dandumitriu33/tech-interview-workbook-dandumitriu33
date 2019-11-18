@@ -435,7 +435,7 @@ For any iterable (for eg. a string, list, etc), Python allows you to slice and r
 Format for slicing:
 
         iterable_name[start:stop:step]
-        
+
 where,
 - start is the first index of the slice. Defaults to 0 (the index of the first element)
 - stop one past the last index of the slice. Defaults to len(iterable)
@@ -497,7 +497,34 @@ Lists can be multiplied with the * operator.
 The other operators can't be used on lists, including raising to power.
 
 #### What is the purpose of the in and not in membership operators in Python?
+
+Membership operators are operators used to validate the membership of a value. It tests for membership 
+in a sequence, such as strings, lists, or tuples.
+
+        x = 24
+        y = 20
+        numbers = [10, 20, 30, 40, 50]
+        if x not in numbers:
+            print("x is NOT in numbers")
+        else:
+            print("x is in numbers")
+        if y in numbers:
+            print("y is present in the given numbers")
+        else:
+            print("y is NOT present in the given numbers")
+        # x is NOT in numbers
+        # y is present in the given numbers
+
 #### What does the + operator mean when used with strings in Python?
+
+The + operator performs the concatenation operation between strings, placing the second string at the end of 
+the first to form one final longer string.
+
+        a = 'abra'
+        b = 'cadabra'
+        print(a+b)
+        # abracadabra
+
 #### Explain f strings in Python.
 #### Name 4 iterable types in Python.
 #### What is the difference between list/set/dictionary comprehension and a generator expression in Python?
