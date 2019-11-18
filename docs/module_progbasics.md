@@ -753,10 +753,72 @@ conventions, indentation and formatting.
 ### Error handling
 
 #### What is exception handling?
+
+There are some situations in which runtime errors are likely to occur. Whenever we try to read a file or get input from a user, 
+there is a chance that something unexpected will happen – the file may have been moved or deleted, and the user may enter data 
+which is not in the right format. Good programmers should add safeguards to their programs so that common situations like this 
+can be handled gracefully – a program which crashes whenever it encounters an easily foreseeable problem is not very pleasant 
+to use. Most users expect programs to be robust enough to recover from these kinds of setbacks.  
+
+If we know that a particular section of our program is likely to cause an error, we can tell Python what to do if it does happen. 
+Instead of letting the error crash our program we can intercept it, do something about it, and allow the program to continue.  
+
+All the runtime (and syntax) errors that we have encountered are called exceptions in Python – Python uses them to indicate that 
+something exceptional has occurred, and that your program cannot continue unless it is handled.  
+
 #### What are the basics of exception handling in Python?
+
+The try and except statements, with the additional else and finally options, are the basic exception handling workflow in Python.  
+
+When an exception occurs, the normal flow of execution is interrupted. Python checks to see if the line of code which caused the 
+exception is inside a try block. If it is, it checks to see if any of the except blocks associated with the try block can handle 
+that type of exception. If an appropriate handler is found, the exception is handled, and the program continues from the next 
+statement after the end of that try-except.  
+
+If there is no such handler, or if the line of code was not in a try block, Python will go up one level of scope: if the line of 
+code which caused the exception was inside a function, that function will exit immediately, and the line which called the function 
+will be treated as if it had thrown the exception. Python will check if that line is inside a try block, and so on. When a function 
+is called, it is placed on Python’s stack. Python traverses this stack when it tries to handle an exception.  
+
+If an exception is thrown by a line which is in the main body of your program, not inside a function, the program will terminate. 
+When the exception message is printed, you should also see a traceback – a list which shows the path the exception has taken, all 
+the way back to the original line which caused the error.  
+
 #### In which case should we catch an exception? Why?
+
+In all cases because it can prevent the program from stopping and, if well constructed, can tell the users what they need to do next 
+to correct the error. Validation is one major section where exception handling is very useful, you woudn't want your program to close
+every time a typo is made in a data input page, several steps in your work flow.
+
 #### What can/should we do with an exception in the ‘except’ block?
+
+Mainly print information to help the user understand what happened and what needs to be done. Other blocks of code can be placed 
+along side the print statement as in any other location.
+
 #### What does the else and finally statement do in a try-except block in Python?
+
+There are two other clauses that we can add to a try-except block: **else** and **finally**. The else clause will be executed only if the 
+try clause doesn’t raise an exception:
+
+        try:
+            age = int(input("Please enter your age: "))
+        except ValueError:
+            print("Hey, that wasn't a number!")
+        else:
+            print("I see that you are %d years old." % age)
+
+The finally clause will be executed at the end of the try-except block no matter what – if there is no exception, if an exception 
+is raised and handled, if an exception is raised and not handled, and even if we exit the block using break, continue or return. 
+We can use the finally clause for cleanup code that we always want to be executed:
+
+        try:
+            age = int(input("Please enter your age: "))
+        except ValueError:
+            print("Hey, that wasn't a number!")
+        else:
+            print("I see that you are %d years old." % age)
+        finally:
+            print("It was really nice talking to you.  Goodbye!")
 
 ## Software Development Methodologies
 
