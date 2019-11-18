@@ -433,7 +433,9 @@ can even contain complex objects, like functions, classes, and modules.
 
 For any iterable (for eg. a string, list, etc), Python allows you to slice and return a substring or sublist of its data.
 Format for slicing:
+
         iterable_name[start:stop:step]
+        
 where,
 - start is the first index of the slice. Defaults to 0 (the index of the first element)
 - stop one past the last index of the slice. Defaults to len(iterable)
@@ -451,21 +453,26 @@ Examples:
         a[2:4]          # "cd" (from position 2, to position 4 (excluded))
 
 In addition, any of the above can be used with the step size defined:
+
         a[::2]          # "ace" (every 2nd element)
         a[1:4:2]        # "bd" (from index 1, to index 4 (excluded), every 2nd element)
 
 Indices can be negative, in which case they're computed from the end of the sequence
+
         a[:-1]          # "abcde" (from index 0 (default), to the second last element (last element - 1))
         a[:-2]          # "abcd" (from index 0 (default), to the third last element (last element -2))
         a[-1:]          # "f" (from the last element to the end (default len())
 
 Step sizes can also be negative, in which case slice will iterate through the list in reverse order:
+
         a[3:1:-1]       # "dc" (from index 2 to None (default), in reverse order)
 
 This construct is useful for reversing an iterable
+
         a[::-1]         # "fedcba" (from last element (default len()-1), to first, in reverse order(-1))
 
-Notice that for negative steps the default end_index is None (see http://stackoverflow.com/a/12521981 )
+Notice that for negative steps the default end_index is None.
+
         a[5:None:-1]    # "fedcba" (this is equivalent to a[::-1])
         a[5:0:-1]       # "fedcb" (from the last element (index 5) to second element (index 1)
 
