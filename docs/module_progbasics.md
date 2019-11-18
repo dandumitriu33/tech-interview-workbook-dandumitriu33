@@ -374,7 +374,61 @@ as soon as the function returns or terminates.
 
 
 #### If you need to access the iterator variable after a for loop, how would you do it in Python?
+
+The for-loop makes assignments to the variables in the target list. This overwrites all previous assignments to those 
+variables including those made in the suite of the for-loop:
+
+        for i in range(10):
+            print(i)
+            i = 5           # this will not affect the for-loop
+                            # because i will be overwritten with the next
+                            # index in the range
+
+At the end of the iteration, depending on the outcome (it completes, it breaks), the 'i' variable will keep the last
+value it received inside the loop.
+
+        example_list = [1, 3, 4]
+
+        for i in example_list:
+            print('test')
+        print(i)  # prints 4
+
+The iterator variable can be used, but the value has to be carefully considered: Do you want to use the last value 
+it had in the loop? Leave it as it is after the for loop. Do you want to use it in another statement/process/while? 
+Keep in mind that you have to decide if you keep the value or assign a new value. Do you want to use it in a different 
+for loop? This will reset the value inside the new for loop iteration. 
+
 #### What type of elements can a list contain in Python?
+
+A list can contain any assortment of objects. The elements of a list can all be the same type, of varying types or
+can even contain complex objects, like functions, classes, and modules.
+
+        >>> a = [2, 4, 6, 8]
+        >>> a
+        [2, 4, 6, 8]
+
+        >>> a = [21.42, 'foobar', 3, 4, 'bark', False, 3.14159]
+        >>> a
+        [21.42, 'foobar', 3, 4, 'bark', False, 3.14159]
+
+        >>> int
+        <class 'int'>
+        >>> len
+        <built-in function len>
+        >>> def foo():
+        ...     pass
+        ...
+        >>> foo
+        <function foo at 0x035B9030>
+        >>> import math
+        >>> math
+        <module 'math' (built-in)>
+
+        >>> a = [int, len, foo, math]
+        >>> a
+        [<class 'int'>, <built-in function len>, <function foo at 0x02CA2618>,
+        <module 'math' (built-in)>]
+
 #### What is the slice operator in Python and how do you use it?
 #### What arithmetic operators (+,*,-,/) can be used on lists in Python? What do they do?
 #### What is the purpose of the in and not in membership operators in Python?
