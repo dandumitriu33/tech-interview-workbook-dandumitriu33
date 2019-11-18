@@ -634,7 +634,7 @@ to place all the arguments in a tuple.
 The above function mySum() does ‘packing’ to pack all the arguments that this method call receives into one single variable. Once we 
 have this ‘packed’ variable, we can do things with it that we would with a normal tuple. args[0] and args[1] would give you the first 
 and second argument, respectively. Since our tuples are immutable, you can convert the args tuple to a list so you can also modify, 
-delete and re-arrange items in i.
+delete and re-arrange items in it.
 
 #### What happens when you try to assign the result of a function which has no return statement to a variable in Python?
 
@@ -646,8 +646,26 @@ the function ends, when the control flow reaches the end of the function body an
 ### Debugging
 
 #### What techniques can you use while debugging a program in Python?
+
+- Rubber Duck - which is the act of a developer explaining their code to a rubber duck in hope of finding a bug
+- Print/trace - using print statements inside the code to see how it executes
+- Using a Debugger - for example VS Code has a Debugger with advanced features like tracking and breakpoints
+
 #### What does step over, step into and step out mean while using the debugger?
+
+**Step Over**: A function is about to be invoked, but you're not interested in debugging this particular invocation, so you want the 
+debugger to execute that function completely as one entire step.
+**Step Into**: A function is about to be invoked, and you want to debug into the code of that function, so the next step is to go into 
+that function and continue debugging step-by-step.
+**Step Out**: You're done debugging this function step-by-step, and you just want the debugger to run the entire function until it 
+returns as one entire step.
+
 #### How can you start to debug a program from a certain line using the debugger?
+
+By using a line breakpoint.
+
+**Line Breakpoint**: You don't care how it got there, but if execution reaches a particular line of code, you want the debugger to 
+temporarily pause execution there so you can decide what to do.
 
 ### Version control
 
