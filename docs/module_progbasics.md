@@ -362,13 +362,13 @@ cases where same names exist in different namespaces. They are created by module
 the mappings of name-to-object(variables). It is a context in which variables exist and from which they are referenced. 
 It defines the accessibility and the lifetime of a variable.
 
-**Local Scope**: Local scope refers to variables defined in current function. Always, a function will first look up for 
+**Local Scope**: Local scope refers to variables defined in the current function. Always, a function will first look up for 
 a variable name in its local scope. Only if it does not find it there, the outer scopes are checked.
 
 **Enclosed Scope**: For the enclosed scope, we need to define an outer function enclosing the inner function otherwise 
 it will be a global variable.
 
-**The lifetime** of a variable is the period throughout which the variable exits in the memory of your Python program. 
+**The Lifetime** of a variable is the period throughout which the variable exits in the memory of your Python program. 
 The lifetime of variables inside a function is as long as the function executes. These local variables are destroyed 
 as soon as the function returns or terminates.
 
