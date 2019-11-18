@@ -526,7 +526,29 @@ the first to form one final longer string.
         # abracadabra
 
 #### Explain f strings in Python.
+
+Python f-string is the newest Python syntax to do string formatting. It is available since Python 3.6. Python 
+f-strings provide a faster, more readable, more concise, and less error prone way of formatting strings in Python. 
+The f-strings have the f prefix and use {} brackets to evaluate values.
+
+        name = 'Peter'
+        age = 23
+
+        print('%s is %d years old' % (name, age))
+        print('{} is {} years old'.format(name, age))
+        print(f'{name} is {age} years old')
+
+        # all print
+        # Peter is 23 years old
+
 #### Name 4 iterable types in Python.
+
+- string
+- list
+- tuple
+- set
+- dictionary
+
 #### What is the difference between list/set/dictionary comprehension and a generator expression in Python?
 #### Does the order of the function definitions matter in Python? Why?
 #### What does unpacking mean in Python?
