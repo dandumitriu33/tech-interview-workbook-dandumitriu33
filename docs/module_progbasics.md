@@ -653,11 +653,11 @@ the function ends, when the control flow reaches the end of the function body an
 
 #### What does step over, step into and step out mean while using the debugger?
 
-**Step Over**: A function is about to be invoked, but you're not interested in debugging this particular invocation, so you want the 
-debugger to execute that function completely as one entire step.
-**Step Into**: A function is about to be invoked, and you want to debug into the code of that function, so the next step is to go into 
+- **Step Over**: A function is about to be invoked, but you're not interested in debugging this particular invocation, so you want the 
+debugger to execute that function completely as one entire step. 
+- **Step Into**: A function is about to be invoked, and you want to debug into the code of that function, so the next step is to go into 
 that function and continue debugging step-by-step.
-**Step Out**: You're done debugging this function step-by-step, and you just want the debugger to run the entire function until it 
+- **Step Out**: You're done debugging this function step-by-step, and you just want the debugger to run the entire function until it 
 returns as one entire step.
 
 #### How can you start to debug a program from a certain line using the debugger?
