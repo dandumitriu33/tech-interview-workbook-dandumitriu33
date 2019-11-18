@@ -832,11 +832,51 @@ that better ways can be found to meet the project's goals. This means the team s
 ### Unix
 
 #### What is UNIX and what is Linux?
+
+**Unix** and Unix-like operating systems are a family of computer operating systems that are derived from the original Unix System 
+from Bell Labs. Initial proprietary derivatives included the HP-UX and the SunOS systems. However, growing incompatibility between 
+these systems led to the creation of interoperability standards like POSIX. Modern POSIX systems include Linux, its variants, 
+and Mac OS.
+
+**Linux** is an operating system, where the **linux kernel** - the part that manages the CPU, memory and peripheral devices - is 
+the defining component.
+
 #### What do we call the shell in Linux?
-#### What does root means in a Linux environment?
+
+Simply put, the shell is a program that takes commands from the keyboard and gives them to the operating system to perform. 
+On most Linux systems a program called bash (which stands for Bourne Again SHell, an enhanced version of the original Unix shell 
+program, sh, written by Steve Bourne) acts as the shell program.
+
+#### What does root mean in a Linux environment?
+
+**Root** is the user name or account that by default has access to all commands and files on a Linux or other Unix-like operating 
+systems. It is also referred to as the root account, root user or the superuser.
+
 #### How do you access your personal files in Linux?
+
+Mainly the directory /home/username is intended for personal files and a shorter path would be ~/
+
 #### How can you install an application in Linux?
+
+- by using the command line - in Ubuntu and other similar distros this is usually "apt-get install name" which installs the 
+application directly from the repository
+- by depackaging a .deb file with the dpkg app command
+
 #### What is package management in Linux, what are repositories?
+
+In few words, **package management** is a method of installing and maintaining (which includes updating and probably removing 
+as well) software on the system.
+
+- **dpkg** is a low-level package manager for Debian-based systems. It can install, remove, provide information about and build *.deb packages but it can’t automatically download and install their corresponding dependencies.
+
+- **apt-get** is a high-level package manager for Debian and derivatives, and provides a simple way to retrieve and install packages, including dependency resolution, from multiple sources using the command line. Unlike dpkg, apt-get does not work directly with *.deb files, but with the package proper name.
+
+- **aptitude** is another high-level package manager for Debian-based systems, and can be used to perform management tasks (installing, upgrading, and removing packages, also handling dependency resolution automatically) in a fast and easy way. It provides the same functionality as apt-get and additional ones, such as offering access to several versions of a package.
+
+- **rpm** is the package management system used by Linux Standard Base (LSB)-compliant distributions for low-level handling of packages. Just like dpkg, it can query, install, verify, upgrade, and remove packages, and is more frequently used by Fedora-based distributions, such as RHEL and CentOS.
+
+- **yum** adds the functionality of automatic updates and package management with dependency management to RPM-based systems. As a high-level tool, like apt-get or aptitude, yum works with repositories.
+
 #### How do you navigate in the filesystem with the command line?
 #### What does the following commands do: mkdir, rm, cat, cp, touch?
 #### How can you look up what does a command do in Linux if you have no internet connection?
