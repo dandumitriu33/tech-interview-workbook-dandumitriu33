@@ -703,20 +703,52 @@ kept from that conflict.
 
 #### What does it mean atomic commits and descriptive commit messages?
 
-When making code changes, you want to make commits that are generally smaller and that encompass only one irreducible feature, fix, or improvement.
-This is what is called an attomic commit, mainly from the definition of atomic: of or forming a single irreducible unit or component in a larger system
+When making code changes, you want to make commits that are generally smaller and that encompass only one irreducible feature, fix, or 
+improvement. This is what is called an atomic commit, mainly from the definition of atomic: of or forming a single irreducible unit or 
+component in a larger system. This is especially useful on code reviews and roll backs.
 
 #### What’s the difference between git and GitHub?
 
 - **git** is the version control software itself
-- **GitHub** is the popular website that many programming professionals use to display and work on code. The site itself uses the git software to maintain the users' code.
+- **GitHub** is the popular website that many programming professionals use to display and work on code. The site itself uses the git 
+software to maintain the users' code.
 
 ## Software design
 
 ### Clean code
 
 #### What does clean code mean?
+
+“Clean code is code that has been taken care of. Someone has taken the time to keep it simple and orderly. They have paid appropriate 
+attention to details. They have cared.” Robert C. Martin - author of Clean Code
+
+The principle behind clean code is that in the future, the code a person writes, will probably be read by another person, even the 
+writer itself, and it will be much easier for that person to understand, troubleshoot or improve code that has been written with this 
+in mind. The main points of clean code are: easy to understand, easy to maintain, easy to spot bugs, easy to test, DRY over WET, naming 
+conventions, indentation and formatting.
+
 #### What steps do we usually do during a clean code refactoring?
+
+1. Read through the whole code
+2. Summarize what is the purpose of the script in one sentence.
+3. Run the code to see what is the end result
+4. The code should keep runnable and show the same content when you finish the refactor
+5. Do not forget to run the code frequently to check you are on the right track
+6. How to refactor it?
+    - Remove clutter: Clutter is anything in your code that does not add value
+        - Format your code
+        - Delete comments
+    - Remove complexity:
+        - bad names
+        - long methods
+        - deep conditionals
+        - improper variable scopes (global, local)
+    - Remove cleverness: If it's simple and elegant you wouldn't refer to it as 'clever'
+    - Remove the 3 D's:
+        - duplication
+        - duplication
+        - duplication
+        - This can be applied by extracting the duplicated code parts into functions
 
 ### Error handling
 
