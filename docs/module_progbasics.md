@@ -550,7 +550,38 @@ The f-strings have the f prefix and use {} brackets to evaluate values.
 - dictionary
 
 #### What is the difference between list/set/dictionary comprehension and a generator expression in Python?
+
+A **list comprehension** for example is an elegant way of defining and creating a list. List comprehensions allow 
+us to create lists using a for loop with less code. What normally takes 3-4 lines of code, can be compressed 
+into just a single line.
+
+A **generator expression** is somewhat similar to a list comprehension, but the former doesn’t construct a list 
+object. Instead of creating a list and keeping the whole sequence in memory, the generator generates the next 
+element in demand. When a normal function with a return statement is called, it terminates whenever it gets a 
+return statement. But a function with a yield statement saves the state of the function and can be picked up 
+from the same state, next time the function is called. The generator expression allows us to create a generator 
+without the yield keyword.
+
+The generator yields one item at a time and generates items only when in demand. Whereas, in a list comprehension, 
+Python reserves memory for the whole list. Thus we can say that the **generator expressions are more memory efficient** 
+**than list comprehensions**.
+
 #### Does the order of the function definitions matter in Python? Why?
+
+The order of the function definitions doesn't matter. What matters is when the calling of the function is done, it has
+to be done after the function has been defined or it will cause a Name Error.
+
+        def print_sum(a, b):
+            print(sum_numbers(a, b))
+
+        print_sum(2, 4)
+
+        def sum_numbers(a, b):
+            return a + b
+
+This section would cause an error because print_sum is calling sum_numbers inside of it and sum_numbers is defined after.
+The print_sum call is fine, the second call, the sum_numbers call will cause the error.
+
 #### What does unpacking mean in Python?
 #### What happens when you try to assign the result of a function which has no return statement to a variable in Python?
 
