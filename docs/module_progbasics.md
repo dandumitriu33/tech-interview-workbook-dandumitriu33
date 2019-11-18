@@ -647,9 +647,9 @@ the function ends, when the control flow reaches the end of the function body an
 
 #### What techniques can you use while debugging a program in Python?
 
-- Rubber Duck - which is the act of a developer explaining their code to a rubber duck in hope of finding a bug
-- Print/trace - using print statements inside the code to see how it executes
-- Using a Debugger - for example VS Code has a Debugger with advanced features like tracking and breakpoints
+- **Rubber Duck**: which is the act of a developer explaining their code to a rubber duck in hope of finding a bug
+- **Print/trace**: using print statements inside the code to see how it executes
+- **Using a Debugger**: for example VS Code has a Debugger with advanced features like tracking and breakpoints
 
 #### What does step over, step into and step out mean while using the debugger?
 
@@ -670,12 +670,46 @@ temporarily pause execution there so you can decide what to do.
 ### Version control
 
 #### What are the advantages of using a version control system?
+
+- easy **collaboration** when lots of people have to work on the same project, mainly because of the ability to merge files;
+- **storing versions** (properly) - it clears up things like, how often do you save changes, how do you name the files after 
+changes and most importantly, how can you easily tell what changes have been made
+- **restoring previous versions** is extremely easy, just a few steps, most valuable when mistake consequences are minimized
+- **backup** with different options depending on the project - distributed or centralized
+
 #### What is the difference between the working directory, the staging area and the repository in git?
+
+- **the working directory** is the part of the local repository where files are located
+- **the staging area** is the part of the local repository called **the Index** where changes are added
+- **the head** is the last area, where additions are commited from the Index
+- **the repository** is the trees, the file system of the project, maintained by git
+
 #### What are remote repositories in git?
+
+A remote repository in Git is a common repository that all team members use to exchange their changes. In most cases, such a remote repository 
+is stored on a code hosting service like GitHub or on an internal server. A local repository is stored on a team member's own computer.
+
 #### Why does a merge conflict occur?
+
+Merge conflicts happen when you merge branches that have competing commits, and Git needs your help to decide which changes to incorporate 
+in the final merge. For example if two people worked on the same file on the same function, a decision needs to be made about what will be 
+kept from that conflict.
+
 #### Through what series of commands could you put a new file into a remote repository connected to your existing local repository?
+
+1. git add file.txt
+2. git commit -m "Add the file.txt to the project"
+3. git push origin branch_name
+
 #### What does it mean atomic commits and descriptive commit messages?
+
+When making code changes, you want to make commits that are generally smaller and that encompass only one irreducible feature, fix, or improvement.
+This is what is called an attomic commit, mainly from the definition of atomic: of or forming a single irreducible unit or component in a larger system
+
 #### What’s the difference between git and GitHub?
+
+- **git** is the version control software itself
+- **GitHub** is the popular website that many programming professionals use to display and work on code. The site itself uses the git software to maintain the users' code.
 
 ## Software design
 
