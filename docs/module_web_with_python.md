@@ -241,20 +241,90 @@ from util import bubble_sort
 
 ```Javascript
 export function bubbleSort (theList) { … };
-import { bubbleSort } from “utils.js”;
+import { bubbleSort } from “/utils.js”;
 ```
 
 
 ### Functional
 #### What is recursion?
+
+**Recursion** in computer science is a method of solving a problem where the solution depends on solutions to smaller instances of the same problem. Such problems can generally be solved by iteration, but this needs to identify and index the smaller instances at programming time. At the opposite, recursion solves such recursive problems by using functions that call themselves from within their own code. The approach can be applied to many types of problems, and recursion is one of the central ideas of computer science.
+
 #### Write a recursive function which calculates the Fibonacci numbers!
+
+```Python
+def Fibonacci(n):
+    if n<0:
+        print("Incorrect input")
+    # First Fibonacci number is 0
+    elif n==1:
+        return 0
+    # Second Fibonacci number is 1
+    elif n==2:
+        return 1
+    else:
+        return Fibonacci(n-1)+Fibonacci(n-2)
+  
+print(Fibonacci(9))
+```
+
 #### How to store a function in a variable in Python?
+
+```Python
+def foo():
+	return ‘hello foo’
+test = foo
+print(test()) # will print hello foo
+```
+
 #### List the ways of defining a callable logical unit in JavaScript!
+
+* var
+* let
+* const
+* function
+
 #### What is an event listener? How to attach one?
+
+The EventListener interface represents an object that can handle an event dispatched by an EventTarget object.  
+
+```Javascript
+const buttonElement = document.getElementById('btn'); 
+// Add a handler for the 'click' event by providing a callback function. 
+// Whenever the element is clicked, a pop-up with "Element clicked!" will 
+// appear. 
+buttonElement.addEventListener('click', function (event) { 
+alert('Element clicked through function!'); 
+});
+```
+
 #### How to trigger an event in JavaScript?
+
+* do the action is is set up to listen to
+* simulate the action with a method, for example the mouse click method .clcik()
+
+```Javascript
+document.getElementById("clickMeButton").clcik(); // clicks on the button
+```
+
 #### What is a callback function? Tell some examples of its usage.
+
+A **callback** is a function that is to be executed after another function has finished executing — hence the name ‘call back’.  
+In JavaScript, functions are objects. Because of this, functions can take functions as arguments, and can be returned by other functions. Functions that do this are called higher-order functions. Any function that is passed as an argument is called a callback function.  
+Use cases:
+* synchronous/asynchronous js, loding the dom before the “long execution functions” are done
+* fetch actions with API info
+
 #### What is a Python decorator? How does it work? Tell some examples of its usage.
+
+A **decorator** wraps a function in additional functionality. They are a very powerful and useful tool in Python since it allows programmers to modify the behavior of a function or class. Decorators allow us to wrap another function in order to extend the behavior of the wrapped function, without permanently modifying it.  
+In Decorators, functions are taken as the argument into another function and then called inside the wrapper function.  
+For example, Flask assigns routes, manages the connection to the database via decorators and thus makes the code more readable. 
+
 #### What is the difference between synchronous and asynchronous execution?
+
+**Synchronous** execution is where the code lines are executed one after the other, top to bottom  
+**Asynchronous** execution does have top to bottom execution but in addition, it allows for sending functions to the call queue which is executed after the call stack
 
 ## Programming languages
 
