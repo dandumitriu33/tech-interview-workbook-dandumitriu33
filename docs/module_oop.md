@@ -348,7 +348,7 @@ the superclass. So the subclass is "under" the superclass.
 
 https://en.wikipedia.org/wiki/Class_diagram
 
-#IMPORT PIC FROM IMG
+![alt text](/docs/oop_img/screenshot.jpg?raw=true)
 
 #### Difference between overloading and overriding?
 
@@ -680,7 +680,7 @@ Here is an example of the loss of precision using double:
 
 #### What happens if you try to call something, that you have no access to, because of data hiding?
 
-
+An error is detected at compile time - it indicates the private access of the “something”.
 
 #### What happens if you try to delete/drop an item from an array, while you are iterating over it?
 
