@@ -348,7 +348,7 @@ the superclass. So the subclass is "under" the superclass.
 
 https://en.wikipedia.org/wiki/Class_diagram
 
-![alt text](/docs/oop_img/screenshot.jpg?raw=true)
+![alt text](/docs/oop_img/UML_Class.jpg?raw=true)
 
 #### Difference between overloading and overriding?
 
