@@ -261,3 +261,149 @@ Required
 * Specifies that the property's value is required.  
 MaxLength  
 * Sets the maximum allowed length of the property value (string or array).
+
+#### What is Signal R?
+
+ASP.NET Core SignalR is an open-source library that simplifies adding real-time web functionality to apps. Real-time web functionality enables server-side code to push content to clients instantly.
+
+Good candidates for SignalR:
+
+* Apps that require high frequency updates from the server. Examples are gaming, social networks, voting, auction, maps, and GPS apps.  
+* Dashboards and monitoring apps. Examples include company dashboards, instant sales updates, or travel alerts.  
+* Collaborative apps. Whiteboard apps and team meeting software are examples of collaborative apps.
+* Apps that require notifications. Social networks, email, chat, games, travel alerts, and many other apps use notifications.
+
+Here are some features of SignalR for ASP.NET Core:
+
+* Handles connection management automatically.
+* Sends messages to all connected clients simultaneously. For example, a chat room.
+* Sends messages to specific clients or groups of clients.
+* Scales to handle increasing traffic.
+
+SignalR supports the following techniques for handling real-time communication (in order of graceful fallback):
+
+* WebSockets
+* Server-Sent Events
+* Long Polling  
+
+SignalR automatically chooses the best transport method that is within the capabilities of the server and client.
+
+#### What is GraphQL?
+
+GraphQL is a query language and server-side runtime for application programming interfaces (APIs) that prioritizes giving clients exactly the data they request and no more.
+
+GraphQL is designed to make APIs fast, flexible, and developer-friendly. It can even be deployed within an integrated development environment (IDE) known as GraphiQL. As an alternative to REST, GraphQL lets developers construct requests that pull data from multiple data sources in a single API call. 
+
+Additionally, GraphQL gives API maintainers the flexibility to add or deprecate fields without impacting existing queries. Developers can build APIs with whatever methods they prefer, and the GraphQL specification will ensure they function in predictable ways to clients.
+
+The first example shows how a client can construct a GraphQL query, asking an API to return specific fields in a shape you’ve specified.
+
+        {
+        me {
+            name
+        }
+        }
+
+A GraphQL API would return a result like this in JSON format:
+
+        {
+        "me": {
+            "name": "Dorothy"
+        }
+        }
+
+A client can also pass arguments as part of a GraphQL query, as seen in this example:
+
+        {
+        human(id: "1000") {
+            name
+            location
+        }
+        }
+
+The result:
+
+        {
+        "data": {
+            "human": {
+            "name": "Dorothy,
+            "location": "Kansas"
+            }
+        }
+        }
+
+So this query:
+
+        query HeroComparison($first: Int = 3) {
+        leftComparison: hero(location: KANSAS) {
+            ...comparisonFields
+        }
+        rightComparison: hero(location: OZ) {
+            ...comparisonFields
+        }
+        }
+
+        fragment comparisonFields on Character {
+        name
+        friendsConnection(first: $first) {
+            totalCount
+            edges {
+            node {
+                name
+            }
+            }
+        }
+        }
+    
+Might produce this result:
+
+        {
+        "data": {
+            "leftComparison": {
+            "name": "Dorothy",
+            "friendsConnection": {
+                "totalCount": 4,
+                "edges": [
+                {
+                    "node": {
+                    "name": "Aunt Em"
+                    }
+                },
+                {
+                    "node": {
+                    "name": "Uncle Henry"
+                    }
+                },
+                {
+                    "node": {
+                    "name": "Toto"
+                    }
+                }
+                ]
+            }
+            },
+            "rightComparison": {
+            "name": "Wizard",
+            "friendsConnection": {
+                "totalCount": 3,
+                "edges": [
+                {
+                    "node": {
+                    "name": "Scarecrow"
+                    }
+                },
+                {
+                    "node": {
+                    "name": "Tin Man"
+                    }
+                },
+                {
+                    "node": {
+                    "name": "Lion"
+                    }
+                }
+                ]
+            }
+            }
+        }
+        }
