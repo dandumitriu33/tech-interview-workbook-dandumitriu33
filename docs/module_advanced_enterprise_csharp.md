@@ -407,3 +407,87 @@ Might produce this result:
             }
         }
         }
+
+#### What is a Claim?
+
+Claims-based authorization in ASP.NET Core
+
+When an identity is created it may be assigned one or more claims issued by a trusted party. A claim is a name value pair that represents what the subject is, not what the subject can do. For example, you may have a driver's license, issued by a local driving license authority. Your driver's license has your date of birth on it. In this case the claim name would be DateOfBirth, the claim value would be your date of birth, for example 8th June 1970 and the issuer would be the driving license authority. Claims based authorization, at its simplest, checks the value of a claim and allows access to a resource based upon that value.
+
+First you need to build and register the policy. This takes place as part of the Authorization service configuration, which normally takes part in ConfigureServices() in your Startup.cs file.
+
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddControllersWithViews();
+            services.AddRazorPages();
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("EmployeeOnly", policy => policy.RequireClaim("EmployeeNumber"));
+            });
+        }
+
+In this case the EmployeeOnly policy checks for the presence of an EmployeeNumber claim on the current identity.
+
+You then apply the policy using the Policy property on the AuthorizeAttribute attribute to specify the policy name;
+
+        [Authorize(Policy = "EmployeeOnly")]
+        public IActionResult VacationBalance()
+        {
+            return View();
+        }
+
+The AuthorizeAttribute attribute can be applied to an entire controller, in this instance only identities matching the policy will be allowed access to any Action on the controller.
+
+        [Authorize(Policy = "EmployeeOnly")]
+        public class VacationController : Controller
+        {
+            public ActionResult VacationBalance()
+            {
+            }
+        }
+
+If you have a controller that's protected by the AuthorizeAttribute attribute, but want to allow anonymous access to particular actions you apply the AllowAnonymousAttribute attribute.
+
+        [Authorize(Policy = "EmployeeOnly")]
+        public class VacationController : Controller
+        {
+            public ActionResult VacationBalance()
+            {
+            }
+
+            [AllowAnonymous]
+            public ActionResult VacationPolicy()
+            {
+            }
+        }
+
+Most claims come with a value. You can specify a list of allowed values when creating the policy. The following example would only succeed for employees whose employee number was 1, 2, 3, 4 or 5.
+
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddControllersWithViews();
+            services.AddRazorPages();
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Founders", policy =>
+                                policy.RequireClaim("EmployeeNumber", "1", "2", "3", "4", "5"));
+            });
+        }
+
+If you apply multiple policies to a controller or action, then all policies must pass before access is granted. For example:
+
+        [Authorize(Policy = "EmployeeOnly")]
+        public class SalaryController : Controller
+        {
+            public ActionResult Payslip()
+            {
+            }
+
+            [Authorize(Policy = "HumanResources")]
+            public ActionResult UpdateSalary()
+            {
+            }
+        }
+
